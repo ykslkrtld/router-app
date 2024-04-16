@@ -1,8 +1,13 @@
-import React from 'react'
 
-const Followers = () => {
+import Paginate from "../components/Paginate"
+import CardFollowers from "./CardFollowers"
+
+const Followers = ({followers}) => {
   return (
-    <div>Followers</div>
+    <div>
+      <CardFollowers followers = {followers}/>
+      <Paginate/>
+    </div>
   )
 }
 
