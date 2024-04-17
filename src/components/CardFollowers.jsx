@@ -4,12 +4,12 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-const CardFollowers = ({ followers }) => {
+const CardFollowers = ({ filteredFollowers }) => {
   
   return (
       <Container>
         <Row>
-          {followers.map((item) => (
+          {filteredFollowers.map((item) => (
             <Col xs={12} sm={6} md={4} lg={3} key={item.id}>
               <Card style={{ width: "16rem" }}>
                 <Card.Img variant="top" src={item.avatar_url} />

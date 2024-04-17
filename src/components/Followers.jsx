@@ -2,10 +2,10 @@
 import Paginate from "../components/Paginate"
 import CardFollowers from "./CardFollowers"
 
-const Followers = ({followers}) => {
+const Followers = ({filteredFollowers}) => {
   return (
     <div>
-      <CardFollowers followers = {followers}/>
+      <CardFollowers filteredFollowers = {filteredFollowers}/>
       <Paginate/>
     </div>
   )
