@@ -1,4 +1,3 @@
-
 import Paginate from "../components/Paginate"
 import CardFollowers from "./CardFollowers"
 

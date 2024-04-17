@@ -1,5 +1,3 @@
-import React from "react";
-
 const SearchUser = ({ searchPerson, handleSearch }) => {
   return (
     <div className="input-group my-3 w-50 m-auto">
