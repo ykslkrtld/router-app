@@ -3,3 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.login{
+height: 20rem;
+width: 20rem !important;
+border-radius: 2rem;
+}

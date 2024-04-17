@@ -6,9 +6,9 @@ const LoginForm = ({isLogged, setIsLogged}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="container login mt-5 ">
+    <form onSubmit={handleSubmit} className="container login mt-5 bg-warning text-danger">
       <div className="mb-3">
-        <label htmlFor="exampleInputEmail1" className="form-label">
+        <label htmlFor="exampleInputEmail1" className="form-label mt-5">
           Email address
         </label>
         <input
@@ -33,7 +33,7 @@ const LoginForm = ({isLogged, setIsLogged}) => {
           required
         />
       </div>
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-danger">
         Submit
       </button>
     </form>

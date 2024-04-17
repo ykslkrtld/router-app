@@ -59,8 +59,6 @@ const Home = () => {
   //   setCurrentPage(1);
   // };
 
-
-
   const handleSearch = (e) => {
     setSearchPerson(e.target.value);
   };

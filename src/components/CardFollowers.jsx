@@ -15,7 +15,7 @@ const CardFollowers = ({ filteredFollowers }) => {
                 <Card.Img variant="top" src={item.avatar_url} />
                 <Card.Body>
                   <Card.Title>{item.login}</Card.Title>
-                  <a href={item.html_url} target="_blank" rel="noopener noreferrer"><Button  variant="primary">View Profile</Button></a>
+                  <a href={item.html_url} target="_blank" rel="noopener noreferrer"><Button  variant="warning">View Profile</Button></a>
                 </Card.Body>
               </Card>
             </Col>

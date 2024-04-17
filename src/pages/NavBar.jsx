@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const NavBar = ({isLogged, setIsLogged}) => {
   return (
     <nav className="navbar navbar-expand bg-body-tertiary">
-  <div className="container">
+  <div className="container bg-warning rounded-2 my-2 py-2">
     <a className="navbar-brand" href="/">Yksl</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
