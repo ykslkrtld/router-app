@@ -18,6 +18,7 @@ const Home = () => {
         "https://api.github.com/users/anthonyharold67/followers?per_page=100"
       );
       setFollowers(res.data);
+      // setFilteredFollowers(res.data) //UseEffect kullanmazsak bu şekilde olmalı
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -42,6 +43,23 @@ const Home = () => {
     setFilteredFollowers(filteredData);
     setCurrentPage(1);
   }, [searchPerson, followers]);
+
+  
+  // UseEfect kullanmadan handleSearch bu şekilde kullanılarak da olabilir
+
+  // const handleSearch = (e) => {
+  //   const searchTerm = e.target.value.toLowerCase();
+  //   setSearchPerson(searchTerm);
+    
+  //     const filteredData = followers.filter((follower) =>
+  //       follower.login.toLowerCase().includes(searchTerm)
+  //     );
+  //     setFilteredFollowers(filteredData);
+    
+  //   setCurrentPage(1);
+  // };
+
+
 
   const handleSearch = (e) => {
     setSearchPerson(e.target.value);
