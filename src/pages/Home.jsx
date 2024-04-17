@@ -34,17 +34,14 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    console.log("searchPerson:", searchPerson);
-    console.log("followers:", followers);
-    console.log("currentPage:", currentPage);
-    
     const filteredData = followers.filter((follower) =>
       follower.login.toLowerCase().includes(searchPerson.toLowerCase())
     );
     console.log("filteredData:", filteredData);
     
     setFilteredFollowers(filteredData);
-  }, [searchPerson, followers, currentPage]);
+    setCurrentPage(1);
+  }, [searchPerson, followers]);
 
   const handleSearch = (e) => {
     setSearchPerson(e.target.value);
