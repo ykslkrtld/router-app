@@ -9,6 +9,8 @@ const Home = () => {
   const [followers, setFollowers] = useState([]);
   const [filteredFollowers, setFilteredFollowers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [followersPerPage] = useState(10);
 
   const getUsers = async () => {
     try {
@@ -32,23 +34,43 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    console.log("searchPerson:", searchPerson);
+    console.log("followers:", followers);
+    console.log("currentPage:", currentPage);
+    
     const filteredData = followers.filter((follower) =>
       follower.login.toLowerCase().includes(searchPerson.toLowerCase())
     );
+    console.log("filteredData:", filteredData);
+    
     setFilteredFollowers(filteredData);
-  }, [searchPerson, followers]);
+  }, [searchPerson, followers, currentPage]);
 
   const handleSearch = (e) => {
     setSearchPerson(e.target.value);
   };
 
+  const indexOfLastFollower = currentPage * followersPerPage;
+  const indexOfFirstFollower = indexOfLastFollower - followersPerPage;
+  const currentFollowers = filteredFollowers.slice(
+    indexOfFirstFollower,
+    indexOfLastFollower
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   if (loading) {
-    return <img src={loadingGif} />;
+    return <img src={loadingGif} alt="loading" />;
   } else {
     return (
       <div>
         <SearchUser searchPerson={searchPerson} handleSearch={handleSearch} />
-        <Followers filteredFollowers={filteredFollowers} />
+        <Followers
+          filteredFollowers={currentFollowers}
+          currentPage={currentPage}
+          totalPages={Math.ceil(filteredFollowers.length / followersPerPage)}
+          onPageChange={paginate}
+        />
       </div>
     );
   }

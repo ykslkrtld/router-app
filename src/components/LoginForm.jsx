@@ -1,14 +1,7 @@
-// import { useState } from "react";
-
 const LoginForm = ({isLogged, setIsLogged}) => {
-
-  // const [email, setEmail] = useState("")
-  // const [password, setPassword] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setEmail("")
-    // setPassword("")
     setIsLogged(!isLogged)
   }
 
@@ -24,10 +17,6 @@ const LoginForm = ({isLogged, setIsLogged}) => {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           required
-          // value={email}
-          // onChange={(e) => setEmail(e.target.value)}
-
-
         />
         <div id="emailHelp" className="form-text">
           We'll never share your email with anyone else.
@@ -42,8 +31,6 @@ const LoginForm = ({isLogged, setIsLogged}) => {
           className="form-control"
           id="exampleInputPassword1"
           required
-          // value={password}
-          // onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <button type="submit" className="btn btn-primary">
